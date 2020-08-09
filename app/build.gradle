@@ -25,18 +25,6 @@ android {
   }
 
   signingConfigs {
-    debug {
-      storeFile file('keystore/debug.keystore')
-      storePassword 'android'
-      keyAlias 'androiddebugkey'
-      keyPassword 'android'
-    }
-    staging {
-      storeFile file('keystore/debug.keystore')
-      storePassword 'android'
-      keyAlias 'androiddebugkey'
-      keyPassword 'android'
-    }
     release {
       storeFile file('keystore/release.keystore')
       storePassword 'android'
@@ -50,7 +38,6 @@ android {
       debuggable true
       minifyEnabled false
       zipAlignEnabled false
-      signingConfig signingConfigs.debug
       manifestPlaceholders = [enableCrashReporting: "false"]
       buildConfigField "String", "BASE_APP_URL", DEV_BASE_APP_URL
       resValue "string", "GOOGLE_MAPS_KEY", secretkeyProperties['DEV_GOOGLE_MAPS_KEY']
@@ -60,7 +47,6 @@ android {
       debuggable true
       minifyEnabled false
       zipAlignEnabled false
-      signingConfig signingConfigs.staging
       manifestPlaceholders = [enableCrashReporting: "true"]
       buildConfigField "String", "BASE_APP_URL", STAGE_BASE_APP_URL
       resValue "string", "GOOGLE_MAPS_KEY", secretkeyProperties['STAGE_GOOGLE_MAPS_KEY']
@@ -82,15 +68,17 @@ android {
     main {
       java.srcDirs = ['src/main/java']
       res.srcDirs = [
-              'src/main/res/layouts/detail',
-              'src/main/res/layouts/list',
+              'src/main/res/layouts/details',
+              'src/main/res/layouts/users',
               'src/main/res/layouts/maps',
+              'src/main/res/layouts/login',
               'src/main/res/layouts/splash',
               'src/main/res/layouts',
 
-              'src/main/res/drawable/detail',
-              'src/main/res/drawable/list',
+              'src/main/res/drawable/details',
+              'src/main/res/drawable/users',
               'src/main/res/drawable/maps',
+              'src/main/res/drawable/login',
               'src/main/res/drawable/splash',
               'src/main/res/drawable',
 
@@ -116,12 +104,16 @@ dependencies {
 
   // Kotlin
   implementation kotlinDependency
+  implementation kotlinXCoroutine
 
   // AndroidX
   implementation androidXDependencies.appCompat
   implementation androidXDependencies.KTX
   implementation androidXDependencies.constraintLayout
   implementation androidXDependencies.lifecycleExtension
+  implementation androidXDependencies.lifecycleLiveData
+  implementation androidXDependencies.lifecycleRuntime
+  implementation androidXDependencies.lifecycleViewModel
 
   // Material
   implementation materialDependency
@@ -140,6 +132,10 @@ dependencies {
   // Retrofit
   implementation retrofitDependencies.retrofit
   implementation retrofitDependencies.converterGson
+  implementation retrofitCallToLiveDataAdapterDependency
+
+  // OkHttp
+  implementation okHttpDependency
 
   // Room
   implementation roomDependencies.roomRuntime
