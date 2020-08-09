@@ -31,6 +31,9 @@ build/
 captures/
 output.json 
 
-#NDK
+# NDK
 obj/
 .externalNativeBuild
+
+# Custom Files
+**/*/secretKey.properties
