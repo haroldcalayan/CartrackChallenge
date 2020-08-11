@@ -71,6 +71,7 @@ android {
               'src/main/res/layouts/details',
               'src/main/res/layouts/users',
               'src/main/res/layouts/maps',
+              'src/main/res/layouts/signin',
               'src/main/res/layouts/login',
               'src/main/res/layouts/splash',
               'src/main/res/layouts',
@@ -78,6 +79,7 @@ android {
               'src/main/res/drawable/details',
               'src/main/res/drawable/users',
               'src/main/res/drawable/maps',
+              'src/main/res/drawable/signin',
               'src/main/res/drawable/login',
               'src/main/res/drawable/splash',
               'src/main/res/drawable',
@@ -90,6 +92,11 @@ android {
 
   buildFeatures {
     dataBinding true
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
 
   applicationVariants.all { variant ->
