@@ -33,10 +33,6 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
 
   override fun getLayout() = R.layout.activity_maps
 
-  override fun getBindingVariable() = BR.viewModel
-
-  override fun initData() {}
-
   override fun initViews() {
     val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
     lifecycle.coroutineScope.launchWhenCreated {
@@ -44,8 +40,6 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
       initLocation()
     }
   }
-
-  override fun subscribe() {}
 
   private fun initLocation() {
     fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
