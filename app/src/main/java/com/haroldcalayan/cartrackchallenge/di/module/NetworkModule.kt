@@ -16,7 +16,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Singleton
 
 @Module
-class NetworkModule(private val baseURL: String) {
+class NetworkModule {
 
     @Provides
     @Singleton
@@ -44,6 +44,6 @@ class NetworkModule(private val baseURL: String) {
 
     @Provides
     @Singleton
-    fun provideApiClient(client: OkHttpClient.Builder) = ApiClient(baseURL, client)
+    fun provideApiClient(client: OkHttpClient.Builder) = ApiClient(BuildConfig.BASE_APP_URL, client)
 
 }
