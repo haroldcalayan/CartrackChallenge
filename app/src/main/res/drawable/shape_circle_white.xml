@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020, Cartrack Challenge. All rights reserved.
+  ~
+  ~ Created by Harold Calayan on 8/11/2020
+  ~
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:innerRadius="0dp"
+    android:shape="ring"
+    android:thicknessRatio="2"
+    android:useLevel="false" >
+    <solid android:color="@android:color/white" />
+
+    <stroke
+        android:width="10dp"
+        android:color="@android:color/transparent" />
+</shape>

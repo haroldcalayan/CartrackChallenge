@@ -1,0 +1,12 @@
+<!--
+  ~ Copyright (c) 2020, Cartrack Challenge. All rights reserved.
+  ~
+  ~ Created by Harold Calayan on 8/11/2020
+  ~
+  -->
+
+<vector android:height="18dp" android:tint="@color/colorPrimaryDark"
+    android:viewportHeight="24" android:viewportWidth="24"
+    android:width="18dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/colorPrimaryDark" android:pathData="M8.59,16.59L13.17,12 8.59,7.41 10,6l6,6 -6,6 -1.41,-1.41z"/>
+</vector>
