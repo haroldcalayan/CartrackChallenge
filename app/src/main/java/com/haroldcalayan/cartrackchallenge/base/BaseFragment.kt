@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.haroldcalayan.cartrackchallenge.BR
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment() {
@@ -32,22 +33,22 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment()
      *
      * @return variable id
      */
-    abstract fun getBindingVariable(): Int
+    open fun getBindingVariable(): Int = BR.viewModel
 
     /**
      * Initialize all data related task
      */
-    abstract fun initData()
+    open fun initData() {}
 
     /**
      * Initialize all view related task
      */
-    abstract fun initViews()
+    open fun initViews() {}
 
     /**
      * Subscribe to live data of view model
      */
-    abstract fun subscribe()
+    open fun subscribe() {}
 
     /**
      * Return data binding of

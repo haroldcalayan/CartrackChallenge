@@ -7,7 +7,12 @@
 
 package com.haroldcalayan.cartrackchallenge.base
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 open class BaseViewModel : ViewModel() {
+
+    val _loading = MutableLiveData<Boolean>()
+    val _loginSuccess = MutableLiveData<Int>()
+    val _errorMessage = MutableLiveData<Int>()
 }

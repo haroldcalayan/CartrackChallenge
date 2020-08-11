@@ -8,10 +8,12 @@
 package com.haroldcalayan.cartrackchallenge.base
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProviders
+import com.haroldcalayan.cartrackchallenge.BR
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatActivity() {
@@ -29,22 +31,22 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatA
      *
      * @return variable id
      */
-    abstract fun getBindingVariable(): Int
+    open fun getBindingVariable(): Int = BR.viewModel
 
     /**
      * Initialize all data related task
      */
-    abstract fun initData()
+    open fun initData() {}
 
     /**
      * Initialize all view related task
      */
-    abstract fun initViews()
+    open fun initViews() {}
 
     /**
      * Subscribe to live data of view model
      */
-    abstract fun subscribe()
+    open fun subscribe() {}
 
     /**
      * Return data binding of
@@ -80,5 +82,14 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatA
         provideViewModel()
         viewDataBinding.setVariable(getBindingVariable(), viewModel)
         viewDataBinding.executePendingBindings()
+    }
+
+    fun hideSystemUI() {
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                or View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                or View.SYSTEM_UI_FLAG_IMMERSIVE)
     }
 }
