@@ -9,12 +9,10 @@ package com.haroldcalayan.cartrackchallenge.ui.splash
 
 import android.content.Intent
 import android.view.View
-import com.haroldcalayan.cartrackchallenge.BR
 import com.haroldcalayan.cartrackchallenge.R
 import com.haroldcalayan.cartrackchallenge.base.BaseActivity
 import com.haroldcalayan.cartrackchallenge.databinding.ActivitySplashBinding
 import com.haroldcalayan.cartrackchallenge.ui.login.LoginActivity
-import com.haroldcalayan.cartrackchallenge.ui.maps.MapsActivity
 import kotlinx.coroutines.*
 
 class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
@@ -23,41 +21,32 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
 
     override fun getLayout() = R.layout.activity_splash
 
-    override fun getBindingVariable() = BR.viewModel
-
-    override fun initData() {}
-
-    override fun initViews() {
-        hideSystemUI()
-        startTimer()
-    }
-
-    override fun subscribe() {}
-
     override fun onPause() {
         activityScope.cancel()
         super.onPause()
     }
 
+    override fun initViews() {
+        super.initViews()
+        hideSystemUI()
+        startTimer()
+    }
+
     private fun startTimer() {
         activityScope.launch {
-            delay(3000)
+            delay(SPLASH_SCREEN_LIFE)
             startMain()
             finish()
         }
     }
 
     private fun startMain() {
-        val intent = Intent(this, MapsActivity::class.java)
-        startActivity(intent)
+        Intent(this, LoginActivity::class.java).apply {
+            startActivity(this)
+        }
     }
 
-    private fun hideSystemUI() {
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
-                or View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
-                or View.SYSTEM_UI_FLAG_IMMERSIVE)
+    companion object {
+        private const val SPLASH_SCREEN_LIFE = 3000L
     }
 }
