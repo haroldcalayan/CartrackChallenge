@@ -8,8 +8,8 @@
 package com.haroldcalayan.cartrackchallenge
 
 import android.app.Application
-import com.haroldcalayan.cartrackchallenge.di.DaggerAppComponent
 import com.haroldcalayan.cartrackchallenge.di.component.AppComponent
+import com.haroldcalayan.cartrackchallenge.di.component.DaggerAppComponent
 import timber.log.Timber
 
 class CartrackApplication : Application() {
