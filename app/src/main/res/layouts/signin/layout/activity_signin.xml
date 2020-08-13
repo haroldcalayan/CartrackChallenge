@@ -101,6 +101,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/fontColorWhite"
                 android:inputType="text"
+                android:gravity="center"
                 android:padding="8dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -125,6 +126,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/fontColorWhite"
                 android:inputType="textPassword"
+                android:gravity="center"
                 android:padding="8dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
