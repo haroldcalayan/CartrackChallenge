@@ -11,6 +11,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.haroldcalayan.cartrackchallenge.CartrackApplication
+import com.haroldcalayan.cartrackchallenge.ui.maps.MapsViewModel
 import com.haroldcalayan.cartrackchallenge.ui.signin.SignInViewModel
 import com.haroldcalayan.cartrackchallenge.ui.splash.SplashViewModel
 
@@ -27,6 +28,7 @@ open class BaseViewModel : ViewModel() {
         when (this) {
             is SplashViewModel -> CartrackApplication.instance.appComponent.inject(this)
             is SignInViewModel -> CartrackApplication.instance.appComponent.inject(this)
+            is MapsViewModel -> CartrackApplication.instance.appComponent.inject(this)
         }
     }
 
