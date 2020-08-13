@@ -7,7 +7,6 @@
 
 package com.haroldcalayan.cartrackchallenge.data.source.local
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -18,7 +17,10 @@ import com.haroldcalayan.cartrackchallenge.data.model.Account
 interface AccountDao {
 
     @Query("SELECT * from account")
-    fun getAllAccounts(): LiveData<List<Account>>
+    suspend fun getAllAccounts(): List<Account>
+
+    @Query("SELECT * from account WHERE username = :username")
+    suspend fun getAccount(username: String): Account
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(account: Account)
