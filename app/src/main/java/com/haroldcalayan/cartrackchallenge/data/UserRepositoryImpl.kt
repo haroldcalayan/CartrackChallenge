@@ -8,7 +8,6 @@
 package com.haroldcalayan.cartrackchallenge.data
 
 import com.haroldcalayan.cartrackchallenge.data.model.User
-import com.haroldcalayan.cartrackchallenge.data.source.UserRepository
 import com.haroldcalayan.cartrackchallenge.data.source.local.CartrackRoomDatabase
 
 class UserRepositoryImpl(private val appDatabase: CartrackRoomDatabase) : UserRepository {

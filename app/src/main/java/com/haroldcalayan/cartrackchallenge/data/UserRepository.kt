@@ -5,9 +5,8 @@
  *
  */
 
-package com.haroldcalayan.cartrackchallenge.data.source
+package com.haroldcalayan.cartrackchallenge.data
 
-import androidx.lifecycle.LiveData
 import com.haroldcalayan.cartrackchallenge.data.model.User
 
 interface UserRepository {

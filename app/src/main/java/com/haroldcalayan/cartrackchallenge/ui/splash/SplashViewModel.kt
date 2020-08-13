@@ -9,8 +9,8 @@ package com.haroldcalayan.cartrackchallenge.ui.splash
 
 import androidx.lifecycle.viewModelScope
 import com.haroldcalayan.cartrackchallenge.base.BaseViewModel
+import com.haroldcalayan.cartrackchallenge.data.AuthenticationRepository
 import com.haroldcalayan.cartrackchallenge.data.model.Account
-import com.haroldcalayan.cartrackchallenge.data.source.AuthenticationRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

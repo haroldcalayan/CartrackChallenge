@@ -14,7 +14,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.haroldcalayan.cartrackchallenge.R
 import com.haroldcalayan.cartrackchallenge.base.BaseViewModel
-import com.haroldcalayan.cartrackchallenge.data.source.AuthenticationRepository
+import com.haroldcalayan.cartrackchallenge.data.AuthenticationRepository
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject

@@ -5,7 +5,7 @@
  *
  */
 
-package com.haroldcalayan.cartrackchallenge.data.source
+package com.haroldcalayan.cartrackchallenge.data
 
 import com.haroldcalayan.cartrackchallenge.data.model.Account
 
