@@ -1,64 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.haroldcalayan.cartrackchallenge">
-
-  <!--
+    <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-  <application
-      android:name=".CartrackApplication"
-      android:allowBackup="true"
-      android:icon="@mipmap/cartrack_logo_orange"
-      android:label="@string/app_name"
-      android:supportsRtl="true"
-      android:theme="@style/AppTheme">
+    <application
+        android:name=".CartrackApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/cartrack_logo_orange"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="@string/GOOGLE_MAPS_KEY" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_MAPS_KEY" />
 
-    <activity android:name=".ui.splash.SplashActivity"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme.NoActionBar">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.startupmenu.StartUpMenuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.signin.SignInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent"></activity>
+        <activity
+            android:name=".ui.maps.MapsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-    <activity
-        android:name=".ui.startupmenu.StartUpMenuActivity"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme.NoActionBar">
-    </activity>
-
-    <activity
-        android:name=".ui.signin.SignInActivity"
-        android:screenOrientation="portrait"
-        android:theme="@style/Theme.AppCompat.Translucent">
-    </activity>
-
-    <activity
-        android:name=".ui.maps.MapsActivity"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme.NoActionBar">
-    </activity>
-
-    <activity
-        android:name=".ui.users.UsersActivity"
-        android:screenOrientation="portrait">
-    </activity>
-
-    <activity
-        android:name=".ui.details.DetailsActivity"
-        android:screenOrientation="portrait">
-    </activity>
-  </application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.users.UsersActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.details.DetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
 
 </manifest>

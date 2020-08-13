@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020, Cartrack Challenge. All rights reserved.
+  ~
+  ~ Created by Harold Calayan on 8/14/2020
+  ~
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.details.DetailsActivity"
+    tools:showIn="@layout/activity_details">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Basic Info"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:drawablePadding="6dp"/>
+
+        <TextView
+            android:id="@+id/textview_details_basic_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Address"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:drawablePadding="6dp"/>
+
+        <TextView
+            android:id="@+id/textview_details_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Contacts"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_baseline_contacts_24"
+            android:drawablePadding="6dp"/>
+
+        <TextView
+            android:id="@+id/textview_details_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Work"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_baseline_work_24"
+            android:drawablePadding="6dp"/>
+
+        <TextView
+            android:id="@+id/textview_details_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
