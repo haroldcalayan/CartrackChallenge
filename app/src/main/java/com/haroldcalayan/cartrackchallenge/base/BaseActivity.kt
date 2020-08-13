@@ -9,10 +9,12 @@ package com.haroldcalayan.cartrackchallenge.base
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.haroldcalayan.cartrackchallenge.BR
 import java.lang.reflect.ParameterizedType
 
@@ -91,5 +93,15 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatA
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
                 or View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
                 or View.SYSTEM_UI_FLAG_IMMERSIVE)
+    }
+
+    fun showSnackBarMessage(view: View, stringId: Int) {
+        Snackbar.make(view, stringId, Snackbar.LENGTH_SHORT).apply {
+            show()
+        }
+    }
+
+    fun showToastMessage(stringId: Int) {
+        Toast.makeText(this, stringId, Toast.LENGTH_SHORT).show()
     }
 }
