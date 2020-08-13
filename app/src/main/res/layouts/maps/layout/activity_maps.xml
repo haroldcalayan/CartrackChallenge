@@ -16,7 +16,7 @@
             type="com.haroldcalayan.cartrackchallenge.ui.maps.MapsViewModel"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -31,6 +31,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Adding bottom sheet after main content -->
+        <include layout="@layout/bottomsheet_maps_user" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>
