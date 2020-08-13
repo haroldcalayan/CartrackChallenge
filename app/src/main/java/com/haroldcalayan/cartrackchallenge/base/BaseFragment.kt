@@ -79,8 +79,8 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : Fragment()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initData()
         initViews()
+        initData()
         subscribe()
     }
 
