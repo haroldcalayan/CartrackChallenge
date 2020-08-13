@@ -72,7 +72,7 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
     super.subscribe()
     getViewModel().users.observe(this, Observer {
       userAdapter.updateList(it)
-      selectUser(it[0])
+      if(it.isNotEmpty()) selectUser(it[0])
     })
   }
 
