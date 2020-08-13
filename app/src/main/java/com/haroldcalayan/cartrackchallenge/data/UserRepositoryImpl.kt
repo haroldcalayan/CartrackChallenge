@@ -23,31 +23,38 @@ class UserRepositoryImpl(private val appDatabase: CartrackRoomDatabase) : UserRe
     }
 
     override suspend fun getAllUsers(): List<User> {
-        var users = api.getService()?.getUsers()
+        try {
+            var users = api.getService()?.getUsers()
 
-        if(users!!.isNotEmpty()) {
-            appDatabase.userDao().deleteAll()
-            appDatabase.userDao().insertUsers(users)
-        } else {
-            users = appDatabase.userDao().getAllUsers()
+            if (users!!.isNotEmpty()) {
+                appDatabase.userDao().deleteAll()
+                appDatabase.userDao().insertUsers(users)
+            } else {
+                users = appDatabase.userDao().getAllUsers()
+            }
+
+            return users
+        } catch (e : Exception) {
+            e.printStackTrace()
         }
-
-        return users
+        return appDatabase.userDao().getAllUsers()
     }
 
     override suspend fun getSomeUsers(limit: Int, offset: Int): List<User> {
-        var users = appDatabase.userDao().getSomeUsers(limit, offset)
-        if(users!!.isNotEmpty()) return users
+        try {
+            var users = appDatabase.userDao().getSomeUsers(limit, offset)
+            if(users!!.isNotEmpty()) return users
 
-        var usersFromRemote = api.getService()?.getUsers()
+            var usersFromRemote = api.getService()?.getUsers()
 
-        if(usersFromRemote!!.isNotEmpty()) {
-            appDatabase.userDao().deleteAll()
-            appDatabase.userDao().insertUsers(users)
-            return appDatabase.userDao().getSomeUsers(limit, offset)
+            if(usersFromRemote!!.isNotEmpty()) {
+                appDatabase.userDao().deleteAll()
+                appDatabase.userDao().insertUsers(users)
+            }
+        } catch (e : Exception) {
+            e.printStackTrace()
         }
-
-        return emptyList()
+        return appDatabase.userDao().getSomeUsers(limit, offset)
     }
 
     override suspend fun getCachedUsers() = appDatabase.userDao().getAllUsers()
