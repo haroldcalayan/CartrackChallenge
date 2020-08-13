@@ -22,7 +22,7 @@ class UserRepositoryImpl(private val appDatabase: CartrackRoomDatabase) : UserRe
         CartrackApplication.instance.appComponent.inject(this)
     }
 
-    override suspend fun getAllUsers() : List<User> {
+    override suspend fun getAllUsers(): List<User> {
         var users = api.getService()?.getUsers()
 
         if(users!!.isNotEmpty()) {
@@ -49,6 +49,8 @@ class UserRepositoryImpl(private val appDatabase: CartrackRoomDatabase) : UserRe
 
         return emptyList()
     }
+
+    override suspend fun getCachedUsers() = appDatabase.userDao().getAllUsers()
 
     override suspend fun getUser(id: Int): List<User> = appDatabase.userDao().getUser(id)
 

@@ -8,6 +8,7 @@
 package com.haroldcalayan.cartrackchallenge.ui.maps
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.view.View
@@ -31,6 +32,7 @@ import com.haroldcalayan.cartrackchallenge.R
 import com.haroldcalayan.cartrackchallenge.base.BaseActivity
 import com.haroldcalayan.cartrackchallenge.data.model.User
 import com.haroldcalayan.cartrackchallenge.databinding.ActivityMapsBinding
+import com.haroldcalayan.cartrackchallenge.ui.details.DetailsActivity
 import kotlinx.android.synthetic.main.bottomsheet_maps_user.*
 
 
@@ -58,6 +60,7 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
 
   override fun initData() {
     super.initData()
+    getViewModel().getCachedUsers()
     getViewModel().getUsers()
   }
 
@@ -68,6 +71,8 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
       selectUser(it[0])
     })
   }
+
+  fun onMoreDetailsClick(view: View) = startDetails()
 
   private fun initMapSettings() {
     // set map type
@@ -160,5 +165,15 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
     }
 
     googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker!!.position, 2f))
+  }
+
+  private fun startDetails() {
+    Intent(this, DetailsActivity::class.java).apply {
+      startActivityForResult(this, MapsActivity.REQUEST_CODE_DETAILS)
+    }
+  }
+
+  companion object {
+    const val REQUEST_CODE_DETAILS = 1000
   }
 }

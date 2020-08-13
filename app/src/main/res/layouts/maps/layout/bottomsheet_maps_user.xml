@@ -53,13 +53,23 @@
             <TextView
                 android:id="@+id/textview_maps_bottomsheet_sub_details"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_marginLeft="@dimen/spacing_xxlarge"
-                android:layout_marginStart="@dimen/spacing_xxlarge"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:layout_marginRight="@dimen/spacing_large"
                 android:gravity="center_vertical"
-                android:text=""
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textview_maps_bottomsheet_more_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/spacing_large"
+                android:gravity="center_vertical|right"
+                android:text="More Details"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/holo_green_dark"
+                android:onClick="onMoreDetailsClick"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

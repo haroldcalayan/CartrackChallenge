@@ -15,6 +15,8 @@ interface UserRepository {
 
     suspend fun getSomeUsers(limit: Int, offset: Int): List<User>
 
+    suspend fun getCachedUsers(): List<User>
+
     suspend fun getUser(id: Int): List<User>
 
     suspend fun insertUser(user: User)

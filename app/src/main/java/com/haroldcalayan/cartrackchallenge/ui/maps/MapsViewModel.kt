@@ -37,6 +37,12 @@ class MapsViewModel : BaseViewModel() {
 
     }
 
+    fun getCachedUsers() {
+        viewModelScope.launch {
+            _users.value = userRepository.getCachedUsers()
+        }
+    }
+
     /*
     LiveData Getters
      */
