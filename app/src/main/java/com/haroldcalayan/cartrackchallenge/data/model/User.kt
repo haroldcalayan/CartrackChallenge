@@ -12,13 +12,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "user")
-data class User(
-    @PrimaryKey @ColumnInfo(name = "id") private val id: Int,
-    private val name: String,
-    private val username: String,
-    private val email: String,
-    private val address: Address,
-    private val phone: String,
-    private val website: String,
-    private val company: Company
+class User(
+    @PrimaryKey @ColumnInfo(name = "id") var id: Int,
+    var name: String,
+    var username: String,
+    var email: String,
+    var address: Address,
+    var phone: String,
+    var website: String,
+    var company: Company
 )

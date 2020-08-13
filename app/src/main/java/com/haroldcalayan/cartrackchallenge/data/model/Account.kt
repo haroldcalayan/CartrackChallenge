@@ -12,7 +12,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "account")
-data class Account (
-    @PrimaryKey @ColumnInfo(name = "username") private val username: String,
-    private val password: String
+class Account (
+    @PrimaryKey @ColumnInfo(name = "username") var username: String,
+    var password: String
 )

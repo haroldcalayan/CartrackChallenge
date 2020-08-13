@@ -7,8 +7,8 @@
 
 package com.haroldcalayan.cartrackchallenge.data.model
 
-data class Company (
-    private val name: String,
-    private val catchPhrase: String,
-    private val bs: String
+class Company (
+    var name: String,
+    var catchPhrase: String,
+    var bs: String
 )

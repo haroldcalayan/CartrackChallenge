@@ -7,10 +7,10 @@
 
 package com.haroldcalayan.cartrackchallenge.data.model
 
-data class Address (
-    private val street: String,
-    private val suite: String,
-    private val city: String,
-    private val zipcode: String,
-    private val geo: Geo
+class Address (
+    var street: String,
+    var suite: String,
+    var city: String,
+    var zipcode: String,
+    var geo: Geo
 )

@@ -7,7 +7,7 @@
 
 package com.haroldcalayan.cartrackchallenge.data.model
 
-data class Geo (
-    private val lat: Double,
-    private val lng: Double
+class Geo (
+    var lat: Double,
+    var lng: Double
 )
