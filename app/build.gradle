@@ -25,6 +25,18 @@ android {
   }
 
   signingConfigs {
+    debug {
+      storeFile file('keystore/debug.keystore')
+      storePassword 'android'
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+    }
+    staging {
+      storeFile file('keystore/debug.keystore')
+      storePassword 'android'
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+    }
     release {
       storeFile file('keystore/release.keystore')
       storePassword 'android'
@@ -47,6 +59,7 @@ android {
       debuggable true
       minifyEnabled false
       zipAlignEnabled false
+      signingConfig signingConfigs.staging
       manifestPlaceholders = [enableCrashReporting: "true"]
       buildConfigField "String", "BASE_APP_URL", STAGE_BASE_APP_URL
       resValue "string", "GOOGLE_MAPS_KEY", secretkeyProperties['STAGE_GOOGLE_MAPS_KEY']
@@ -81,8 +94,6 @@ android {
               'src/main/res/drawable/maps',
               'src/main/res/drawable/signin',
               'src/main/res/drawable/login',
-              'src/main/res/drawable/splash',
-              'src/main/res/drawable',
 
               'src/main/res/layout',
               'src/main/res'
