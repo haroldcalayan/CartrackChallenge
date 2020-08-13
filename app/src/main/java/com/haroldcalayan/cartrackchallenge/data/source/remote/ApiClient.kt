@@ -15,7 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient(
     private val baseURL: String,
-    private val okHttpBuilder: OkHttpClient.Builder) {
+    private val okHttpBuilder: OkHttpClient.Builder
+) {
 
     private lateinit var apiService: ApiService
 
@@ -23,7 +24,7 @@ class ApiClient(
         createClient(baseURL)
     }
 
-    fun createClient(baseUrl: String) {
+    private fun createClient(baseUrl: String) {
         val retrofit = Retrofit.Builder()
             .client(okHttpBuilder.build())
             .addCallAdapterFactory(LiveDataCallAdapterFactory.create())

@@ -7,12 +7,11 @@
 
 package com.haroldcalayan.cartrackchallenge.data.source.remote
 
-import androidx.lifecycle.LiveData
 import com.haroldcalayan.cartrackchallenge.data.model.User
 import retrofit2.http.GET
 
 interface ApiService {
 
     @GET("users")
-    suspend fun getUsers(): LiveData<List<User>?>?
+    suspend fun getUsers(): List<User>??
 }
