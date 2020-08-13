@@ -16,10 +16,10 @@ import com.haroldcalayan.cartrackchallenge.data.model.Account
 @Dao
 interface AccountDao {
 
-    @Query("SELECT * from account")
+    @Query("SELECT * FROM account")
     suspend fun getAllAccounts(): List<Account>
 
-    @Query("SELECT * from account WHERE username = :username")
+    @Query("SELECT * FROM account WHERE username = :username")
     suspend fun getAccount(username: String): Account
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

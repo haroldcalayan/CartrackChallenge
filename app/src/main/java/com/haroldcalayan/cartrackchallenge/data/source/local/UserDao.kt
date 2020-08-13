@@ -16,14 +16,20 @@ import com.haroldcalayan.cartrackchallenge.data.model.User
 @Dao
 interface UserDao {
 
-    @Query("SELECT * from user")
+    @Query("SELECT * FROM user")
     suspend fun getAllUsers(): List<User>
 
-    @Query("SELECT * from user WHERE id = :id")
+    @Query("SELECT * FROM user LIMIT :limit OFFSET :offset")
+    suspend fun getSomeUsers(limit: Int, offset: Int): List<User>
+
+    @Query("SELECT * FROM user WHERE id = :id")
     suspend fun getUser(id: Int): List<User>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(user: User)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertUsers(users: List<User>)
 
     @Query("DELETE FROM user")
     suspend fun deleteAll()
