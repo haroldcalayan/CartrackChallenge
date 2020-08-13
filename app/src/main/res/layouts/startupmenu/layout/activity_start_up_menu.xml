@@ -13,7 +13,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.haroldcalayan.cartrackchallenge.ui.login.LoginViewModel"/>
+            type="com.haroldcalayan.cartrackchallenge.ui.startupmenu.StartUpMenuViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
         android:layout_height="match_parent">
 
         <VideoView
-            android:id="@+id/videoview_login_background"
+            android:id="@+id/videoview_startupmenu_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +39,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageview_login_logo"
+            android:id="@+id/imageview_startupmenu_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="fitStart"
@@ -49,35 +49,36 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button_login_signin"
+            android:id="@+id/button_startupmenu_signin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SIGN IN"
             android:textSize="18sp"
             android:textColor="@color/fontColorWhite"
             android:background="@drawable/login_button_signin_background"
+            android:onClick="onSignInClick"
             android:padding="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/textview_login_or"
+            app:layout_constraintBottom_toTopOf="@+id/textview_startupmenu_or"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
         <View
-            android:id="@+id/view_login_line_left"
+            android:id="@+id/view_startupmenu_line_left"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="12dp"
             android:layout_marginBottom="18dp"
             android:background="@color/colorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/button_login_signup"
+            app:layout_constraintBottom_toTopOf="@+id/button_startupmenu_signup"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/textview_login_or"/>
+            app:layout_constraintRight_toLeftOf="@+id/textview_startupmenu_or"/>
 
         <TextView
-            android:id="@+id/textview_login_or"
+            android:id="@+id/textview_startupmenu_or"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
@@ -87,22 +88,22 @@
             android:textColor="@color/fontColorWhite"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/button_login_signup"/>
+            app:layout_constraintBottom_toTopOf="@+id/button_startupmenu_signup"/>
 
         <View
-            android:id="@+id/view_login_line_right"
+            android:id="@+id/view_startupmenu_line_right"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="18dp"
             android:background="@color/colorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/button_login_signup"
-            app:layout_constraintLeft_toRightOf="@+id/textview_login_or"
+            app:layout_constraintBottom_toTopOf="@+id/button_startupmenu_signup"
+            app:layout_constraintLeft_toRightOf="@+id/textview_startupmenu_or"
             app:layout_constraintRight_toRightOf="parent"/>
 
         <Button
-            android:id="@+id/button_login_signup"
+            android:id="@+id/button_startupmenu_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SIGN UP"
@@ -113,12 +114,12 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/textview_login_country"
+            app:layout_constraintBottom_toTopOf="@+id/textview_startupmenu_country"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
-            android:id="@+id/textview_login_country"
+            android:id="@+id/textview_startupmenu_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"

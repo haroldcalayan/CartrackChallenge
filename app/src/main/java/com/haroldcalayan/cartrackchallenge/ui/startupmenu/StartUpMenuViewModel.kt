@@ -5,9 +5,9 @@
  *
  */
 
-package com.haroldcalayan.cartrackchallenge.ui.login
+package com.haroldcalayan.cartrackchallenge.ui.startupmenu
 
 import com.haroldcalayan.cartrackchallenge.base.BaseViewModel
 
-class LoginViewModel : BaseViewModel() {
+class StartUpMenuViewModel : BaseViewModel() {
 }

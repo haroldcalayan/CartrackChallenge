@@ -5,7 +5,7 @@
  *
  */
 
-package com.haroldcalayan.cartrackchallenge.ui.login
+package com.haroldcalayan.cartrackchallenge.ui.startupmenu
 
 import android.os.Bundle
 import android.view.LayoutInflater
