@@ -1,12 +1,12 @@
 <resources>
-  <string name="app_name">Cartrack Challenge</string>
-  <string name="title_activity_maps">Map</string>
+      <string name="app_name">Cartrack Challenge</string>
+      <string name="title_activity_maps">Map</string>
 
-  <string name="signin_error_username_must_not_empty">Username must not be empty</string>
-  <string name="signin_error_password_must_not_empty">Username must not be empty</string>
-  <string name="signin_error_username_must_3_characters">Username must have minimum of 3 characters</string>
-  <string name="signin_error_password_must_8_characters">Password must have minimum of 8 characters</string>
-  <string name="signin_error_user_is_not_registered">User is not registered</string>
-  <string name="signin_error_password_does_not_match">Password does not match</string>
-
+      <string name="signin_error_username_must_not_empty">Username must not be empty</string>
+      <string name="signin_error_password_must_not_empty">Username must not be empty</string>
+      <string name="signin_error_username_must_3_characters">Username must have minimum of 3 characters</string>
+      <string name="signin_error_password_must_8_characters">Password must have minimum of 8 characters</string>
+      <string name="signin_error_user_is_not_registered">User is not registered</string>
+      <string name="signin_error_password_does_not_match">Password does not match</string>
+      <string name="details_warning_feature_is_not_yet_implemented">This feature is not yet implemented</string>
 </resources>
