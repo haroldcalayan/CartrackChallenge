@@ -7,6 +7,34 @@
 
 package com.haroldcalayan.cartrackchallenge.ui.splash
 
+import androidx.lifecycle.viewModelScope
 import com.haroldcalayan.cartrackchallenge.base.BaseViewModel
+import com.haroldcalayan.cartrackchallenge.data.model.Account
+import com.haroldcalayan.cartrackchallenge.data.source.AuthenticationRepository
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SplashViewModel : BaseViewModel()
+class SplashViewModel : BaseViewModel() {
+
+    @Inject
+    lateinit var authenticationRepository: AuthenticationRepository
+
+    init {
+        viewModelScope.launch {
+            populateDatabase()
+        }
+    }
+
+    private suspend fun populateDatabase() {
+        val accounts = authenticationRepository.getAllAccounts()
+
+        if(accounts.isEmpty()) {
+            //delete data
+            authenticationRepository.deleteAccounts()
+
+            //populate data
+            authenticationRepository.insertAccount(Account("user1", "Password"))
+            authenticationRepository.insertAccount(Account("user2", "Password"))
+        }
+    }
+}

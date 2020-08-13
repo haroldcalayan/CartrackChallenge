@@ -8,11 +8,10 @@
 package com.haroldcalayan.cartrackchallenge.ui.splash
 
 import android.content.Intent
-import android.view.View
 import com.haroldcalayan.cartrackchallenge.R
 import com.haroldcalayan.cartrackchallenge.base.BaseActivity
 import com.haroldcalayan.cartrackchallenge.databinding.ActivitySplashBinding
-import com.haroldcalayan.cartrackchallenge.ui.login.LoginActivity
+import com.haroldcalayan.cartrackchallenge.ui.startupmenu.StartUpMenuActivity
 import kotlinx.coroutines.*
 
 class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
@@ -41,7 +40,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
     }
 
     private fun startMain() {
-        Intent(this, LoginActivity::class.java).apply {
+        Intent(this, StartUpMenuActivity::class.java).apply {
             startActivity(this)
         }
     }
