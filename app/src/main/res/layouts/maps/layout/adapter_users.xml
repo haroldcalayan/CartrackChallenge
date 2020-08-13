@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020, Cartrack Challenge. All rights reserved.
+  ~
+  ~ Created by Harold Calayan on 8/14/2020
+  ~
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable
+            name="user"
+            type="com.haroldcalayan.cartrackchallenge.data.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageview_users_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.02"/>
+
+        <TextView
+            android:id="@+id/textview_users_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ user.name }"
+            android:textSize="24sp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toRightOf="@+id/imageview_users_image"
+            app:layout_constraintTop_toTopOf="@+id/imageview_users_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <TextView
+            android:id="@+id/textview_users_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{ user.address.suite.concat(" ").concat(user.address.street).concat(" St. ").concat(user.address.city).concat(" City ")}'
+            android:textSize="16sp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toRightOf="@+id/imageview_users_image"
+            app:layout_constraintTop_toBottomOf="@+id/textview_users_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
