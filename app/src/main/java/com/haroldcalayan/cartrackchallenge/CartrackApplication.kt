@@ -10,6 +10,8 @@ package com.haroldcalayan.cartrackchallenge
 import android.app.Application
 import com.haroldcalayan.cartrackchallenge.di.component.AppComponent
 import com.haroldcalayan.cartrackchallenge.di.component.DaggerAppComponent
+import com.haroldcalayan.cartrackchallenge.di.module.AppModule
+import com.haroldcalayan.cartrackchallenge.di.module.RepositoryModule
 import timber.log.Timber
 
 class CartrackApplication : Application() {
@@ -25,7 +27,10 @@ class CartrackApplication : Application() {
     }
 
     open fun initializeComponent(): AppComponent {
-        return DaggerAppComponent.factory().create(applicationContext)
+        return DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .repositoryModule(RepositoryModule())
+            .build()
     }
 
     private fun initLog() {

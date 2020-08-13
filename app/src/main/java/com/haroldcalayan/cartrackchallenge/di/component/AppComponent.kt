@@ -7,19 +7,19 @@
 
 package com.haroldcalayan.cartrackchallenge.di.component
 
-import android.content.Context
+import com.haroldcalayan.cartrackchallenge.di.module.AppModule
 import com.haroldcalayan.cartrackchallenge.di.module.NetworkModule
 import com.haroldcalayan.cartrackchallenge.di.module.RepositoryModule
-import dagger.BindsInstance
+import com.haroldcalayan.cartrackchallenge.ui.signin.SignInViewModel
+import com.haroldcalayan.cartrackchallenge.ui.splash.SplashViewModel
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component (modules = [ NetworkModule::class, RepositoryModule::class ])
+@Component (modules = [ AppModule::class, NetworkModule::class, RepositoryModule::class ])
 interface AppComponent {
 
-    @Component.Factory
-    interface Factory {
-        fun create(@BindsInstance context: Context): AppComponent
-    }
+    // Classes that can be injected by this Component
+    fun inject(viewModel: SplashViewModel)
+    fun inject(viewModel: SignInViewModel)
 }

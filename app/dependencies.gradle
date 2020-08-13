@@ -60,11 +60,12 @@ ext {
     roomVersion = "2.2.5"
     roomDependencies = [
             roomRuntime                 : "androidx.room:room-runtime:$roomVersion",
-            roomCompiler                : "androidx.room:room-compiler:$roomVersion"
+            roomCompiler                : "androidx.room:room-compiler:$roomVersion",
+            roomKTX                     : "androidx.room:room-ktx:$roomVersion"
     ]
 
     // Dagger
-    daggerVersion = "2.28.3"
+    daggerVersion = "2.24"
     daggerDependencies = [
             dagger                      : "com.google.dagger:dagger:$daggerVersion",
             compiler                    : "com.google.dagger:dagger-compiler:$daggerVersion"
