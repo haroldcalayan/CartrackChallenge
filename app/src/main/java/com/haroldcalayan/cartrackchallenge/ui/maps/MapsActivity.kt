@@ -27,6 +27,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
+import com.google.gson.Gson
 import com.google.maps.android.ktx.awaitMap
 import com.haroldcalayan.cartrackchallenge.R
 import com.haroldcalayan.cartrackchallenge.base.BaseActivity
@@ -38,9 +39,12 @@ import kotlinx.android.synthetic.main.bottomsheet_maps_user.*
 
 class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
 
+  private val gson = Gson()
+
   private lateinit var googleMap: GoogleMap
   private lateinit var fusedLocationClient: FusedLocationProviderClient
   private lateinit var userAdapter: UserAdapter
+  private lateinit var selectedUser: User
 
   private var lastKnownLocation: Location? = null
   private var usersInMap = hashMapOf<Int, Marker>()
@@ -72,7 +76,7 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
     })
   }
 
-  fun onMoreDetailsClick(view: View) = startDetails()
+  fun onMoreDetailsClick(view: View) = startDetails(selectedUser)
 
   private fun initMapSettings() {
     // set map type
@@ -137,6 +141,7 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
 
   private fun selectUser(user: User) {
     if(user != null) {
+      selectedUser = user
       textview_maps_bottomsheet_name.text = user.name
       textview_maps_bottomsheet_sub_details.text = StringBuilder()
         .append("Address: ")
@@ -149,7 +154,6 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
         .append(user.address.geo.lng)
         .append(" lng ")
         .toString()
-
       pinUserToMap(user)
     }
   }
@@ -167,8 +171,9 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapsViewModel>() {
     googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker!!.position, 2f))
   }
 
-  private fun startDetails() {
+  private fun startDetails(user: User) {
     Intent(this, DetailsActivity::class.java).apply {
+      putExtra(DetailsActivity.EXTRA_USER, gson.toJson(user))
       startActivityForResult(this, MapsActivity.REQUEST_CODE_DETAILS)
     }
   }
